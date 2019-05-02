@@ -36,6 +36,5 @@ C)Running the Grader
     2)Setting the cond for the required files with no interface req:{'ai2048':''}
     3)python Grader.py
 
-
-Any question about the auto grader pipeline please contact sardar at gwu dot edu.
+Any question about the auto grader pipeline please contact _sardar at gwu dot edu._
 
