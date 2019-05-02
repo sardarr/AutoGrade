@@ -19,6 +19,23 @@ After running the grader, the results will be copied in /Results directory with 
 '/Homework' directory contains the subdirectory for each homework with the same name as 'hwID' which was used in the Grader conf.
 exp. '/Homework/hw2/' should contain one directory for each students including all the submitted files by the students.
 
+Summary of steps:
+
+A)Creating the runner.java
+
+    1)Copy the homework hw#.java (Which contains all the assertions) as 'hw#.txt' in Asserts
+    2)Change the HWID in AssetGen.py to appropriate homework ID which exist in /Asserts (Step 1)
+    3)Python AssrtGen.py
+B)Requirements
+    
+    1) Copying all the requirements insider /Resources/hw#/ this included only the interface files and other resources 
+    2) THe runner.java which was generated from the previous step should be inside this directory as well. 
+C)Running the Grader
+    
+    1)Setting the conf inside the Grader.py to the right hw# and setting the right key/value for the 'req' as  req:{'main.java':'mainInterface'}
+    2)Setting the cond for the required files with no interface req:{'ai2048':''}
+    3)python Grader.py
+
 
 Any question about the auto grader pipeline please contact sardar at gwu dot edu.
 
