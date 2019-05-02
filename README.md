@@ -12,5 +12,5 @@ After putting the main code inside the /Asserts directory, run the AssertGen.py 
 For the final step, run the Grader.py by setting the configurations pointing to the right Homework. "conf" includes two main parameters, first, 'hwID' and the second one is 'req.'
 'hwID' is to point to the right resource and homework directory and 'req' is to set right relations between the codes and interfaces. For example, if 'condInt.java' is the required interface file for 'code.java' the right format in conf is  conf={'hwID':'hw2','req':{'code.java':'codeInt.java','Ai2048.java':''}}.
 If there is another file which has no interface but needed to be submitted by the students has to be put inside conf like
-'Ai2048.java'. 
+'Ai2048.java' . 
 After running the grader, the results will be copied in /Results directory with the same name as 'hwID'.
