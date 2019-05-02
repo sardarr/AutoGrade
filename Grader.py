@@ -73,7 +73,8 @@ def resParser(result,assert_tbl):
         else:
             failed+=1
             fail_log+=assert_tbl[items.split(" ")[1]][:-1]+"\t"
-    log={'total':len(splited_res),'passed':passed,'failed':failed,'Grade':passed/len(splited_res),'failed_log':fail_log}
+    failed=len(assert_tbl)-passed
+    log={'total':len(assert_tbl),'passed':passed,'failed':failed,'Grade':10*(passed/len(assert_tbl)),'failed_log':fail_log}
     return log
 
 
@@ -84,13 +85,18 @@ def main():
 
 if __name__ == '__main__':
     grades={}
-    conf={'hwID':'hw3','req':{'OneDimensional2048.java':'OneDimensional.java',}}
+    # conf={'hwID':'hw3_debug','req':{'OneDimensional2048.java':'OneDimensional.java',}}
+    # conf={'hwID':'hw4_debug','req':{'OneDimensional2048.java':'OneDimensional.java','TwoDimensional2048.java':'TwoDimensional.java'}}
+    conf={'hwID':'hw5r3','req':{'OneDimensional2048.java':'OneDimensional.java','TwoDimensional2048.java':'TwoDimensional.java',\
+                                'TwoThousandFourtyEight.java':'TwoThousandFourtyEightInt.java','Ai2048.java':''}}
+
     homework_root='Homework/' + conf['hwID']
     list_of_students=os.listdir(homework_root)
     results=open(os.path.join('Results',conf['hwID']),'w')
     assert_tbl=assert_mapper(conf)
-    try:
-        for student_dir in list_of_students:
+
+    for student_dir in list_of_students:
+        try:
             student_dir_full_path=os.path.join(homework_root,student_dir)
             Clean(student_dir_full_path,conf)
             CopyRequirments(student_dir_full_path,conf)
@@ -104,7 +110,7 @@ if __name__ == '__main__':
                 grades[student_dir]='compile Error'
 
             results.write(student_dir+' results '+str(grades[student_dir])+'\n')
-    except:
-        print(student_dir)
+        except:
+            print(student_dir)
 
 results.close()

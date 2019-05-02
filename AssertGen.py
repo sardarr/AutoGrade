@@ -14,7 +14,7 @@ def main(arg):
 
 
 if __name__ == '__main__':
-    HWID='hw3'
+    HWID='hw2'
     main(HWID)
 
 #     try {
